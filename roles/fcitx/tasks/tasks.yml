@@ -1,0 +1,5 @@
+---
+ - name: install fcitx Input method framework
+   apt:
+    name: fcitx
+    state: present
