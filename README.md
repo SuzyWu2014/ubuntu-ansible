@@ -6,4 +6,4 @@
 ### Configurations
 
 + [Configure Sublime Text 3](http://suzywu2014.github.io/ubuntu/2017/02/18/Ubuntu-sublime3)
-+ [oh-my-zsh](http://ohmyz.sh/)
++ [Configure oh-my-zsh](http://suzywu2014.github.io/ubuntu/2017/02/19/Ubuntu-zsh)
