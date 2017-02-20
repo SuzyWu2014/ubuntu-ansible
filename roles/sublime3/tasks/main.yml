@@ -3,3 +3,8 @@
     apt_repository:
       repo: ppa:webupd8team/sublime-text-3
       state: present
+
+  - name: install sublime 3
+    apt:
+      name: sublime-text-installer
+      state: present

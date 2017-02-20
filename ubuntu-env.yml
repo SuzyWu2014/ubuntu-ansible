@@ -4,3 +4,4 @@
 
   roles:
     - {role: sublime3, become: yes}
+    - {role: zsh, become: yes}
