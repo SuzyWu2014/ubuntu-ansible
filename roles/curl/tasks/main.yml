@@ -1,6 +1,6 @@
 ---
-  - name: install OpenJDK 8
+  - name: install curl
     apt:
-      name: openjdk-8-jdk
-      update_cache: yes
+      name: curl
+      state: present
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

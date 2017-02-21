@@ -9,4 +9,4 @@
       name: sublime-text-installer
       state: present
       update_cache: yes
-    when: ansible_distribution == "debian"
+    when: ansible_distribution == "debian" or ansible_distribution == 'Ubuntu'
