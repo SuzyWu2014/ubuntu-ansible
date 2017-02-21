@@ -8,22 +8,3 @@
     apt:
       name: sublime-text-installer
       state: present
-
-  - copy:
-      src: files/sublime_imfix.c
-      dest: /opt/sublime_text/sublime_imfix.c
-      mode: 0644
-      owner: root
-      group: root
-
-  - copy:
-      src: files/sublime-text.desktop
-      dest: /usr/share/applications/sublime-text.desktop
-      mode: 0644
-      owner: root
-      group: root
-
-  - apt: name={{ item }} state=present
-    with_items:
-      - build-essential
-      - libgtk2.0-dev

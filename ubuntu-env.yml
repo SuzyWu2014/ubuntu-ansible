@@ -6,4 +6,4 @@
     - {role: fcitx, become: yes}
     - {role: sublime3, become: yes}
     - {role: zsh, become: yes}
-
+    - {role: sublime-add-chinese-support, become: yes}
