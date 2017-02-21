@@ -1,0 +1,8 @@
+---
+  - name: git clone powerline-fonts
+    git:
+      repo: https://github.com/powerline/fonts.git
+      dest: /tmp/fonts
+
+  - name: install fonts
+    command: bash /tmp/fonts/install.sh

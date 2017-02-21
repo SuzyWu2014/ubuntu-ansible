@@ -1,0 +1,6 @@
+---
+  - name: install flash player
+    apt:
+      name: flashplugin-installer
+      state: present
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

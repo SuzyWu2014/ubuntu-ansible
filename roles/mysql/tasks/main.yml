@@ -1,0 +1,19 @@
+---
+  - name: install mysql-server
+    apt:
+      name: mysql-server
+      state: present
+    when: ansible_distribution == "debian" or ansible_distribution == 'Ubuntu'
+
+  - name: start mysql service
+    service:
+      name: mysql
+      enabled: yes
+      state: started
+    when: ansible_distribution == "debian" or ansible_distribution == 'Ubuntu'
+
+  - name: install mysql-client
+    apt:
+      name: mysql-client
+      state: present
+    when: ansible_distribution == "debian" or ansible_distribution == 'Ubuntu'

@@ -1,0 +1,6 @@
+---
+  - name: install unity-tweak-tool
+    apt:
+      name: unity-tweak-tool
+      state: present
+    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

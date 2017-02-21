@@ -14,3 +14,8 @@
     - {role: vagrant, become: yes}
     - {role: pip3, become: yes}
     - {role: python-env, become: yes}
+    - {role: mysql, become: yes}
+    - {role: unity-tweak-tool, become: yes}
+    - {role: compiz, become: yes}
+    - {role: flash-player, become: yes}
+    - {role: powerline-fonts, become: yes}
