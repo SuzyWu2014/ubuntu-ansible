@@ -12,3 +12,5 @@
     - {role: docker, become: yes}
     - {role: tree, become: yes}
     - {role: vagrant, become: yes}
+    - {role: pip3, become: yes}
+    - {role: python-env, become: yes}
