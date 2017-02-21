@@ -5,6 +5,7 @@
       mode: 0644
       owner: root
       group: root
+    when: ansible_distribution == "debian"
 
   - copy:
       src: files/sublime-text.desktop
@@ -12,8 +13,10 @@
       mode: 0644
       owner: root
       group: root
+    when: ansible_distribution == "debian"
 
-  - apt: name={{ item }} state=present
+  - apt: name={{ item }} state=present update_cache=yes
     with_items:
       - build-essential
       - libgtk2.0-dev
+    when: ansible_distribution == "debian"
