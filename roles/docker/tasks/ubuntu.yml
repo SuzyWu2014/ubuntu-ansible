@@ -1,0 +1,24 @@
+---
+  - name: add docker repo
+    apt_repository:
+      repo: "deb https://apt.dockerproject.org/repo/ ubuntu-{{ansible_distribution_release}} main"
+      filename: docker
+      state: present
+
+  - name: add docker key
+    apt_key:
+      url: https://apt.dockerproject.org/gpg
+      id: '58118E89F3A912897C070ADBF76221572C52609D'
+      state: present
+
+  - name: install docker
+    apt:
+      name: docker-engine
+      state: installed
+      update_cache: true
+
+  - name: enable docker service
+    service:
+      name: docker
+      enabled: yes
+      state: started

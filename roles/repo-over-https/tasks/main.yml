@@ -1,0 +1,7 @@
+---
+  - apt: name={{ item }} state=present update_cache=yes
+    with_items:
+      - apt-transport-https
+      - ca-certificates
+      - software-properties-common
+    when: ansible_distribution == "debian" or ansible_distribution == 'Ubuntu'

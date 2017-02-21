@@ -9,5 +9,5 @@
     - {role: sublime-add-chinese-support, become: yes}
     - {role: openjdk-8, become: yes}
     - {role: git, become: yes}
-    - {role: curl, become: yes}
+    - {role: docker, become: yes}
     - {role: tree, become: yes}
