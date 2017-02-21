@@ -11,3 +11,4 @@
     - {role: git, become: yes}
     - {role: docker, become: yes}
     - {role: tree, become: yes}
+    - {role: vagrant, become: yes}
