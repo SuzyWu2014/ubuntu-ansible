@@ -6,6 +6,32 @@
       update_cache: yes
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
-  - name: install virtualbox-5.1.14
+  - name: Add VirtualBox repo key
+    apt_key:
+      url: http://download.virtualbox.org/virtualbox/debian/oracle_vbox.asc
+      state: present
+
+  - name: Add VirtualBox repo
+    apt_repository:
+      repo: 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib'
+      state: present
+      update_cache: yes
+
+  - name: Install virtualbox in given version
     apt:
-      deb: http://download.virtualbox.org/virtualbox/5.1.14/virtualbox-5.1_5.1.14-112924~Ubuntu~xenial_amd64.deb
+      name: virtualbox-{{apt_virtualbox_version}}
+      state: present
+
+  - name: Check if extension pack is already installed
+    shell: "VBoxManage list extpacks"
+    register: extpack_list
+
+  - name: Download VirtualBox extension pack
+    get_url:
+      url: http://download.virtualbox.org/virtualbox/{{virtualbox_version}}/{{ extension_pack }}
+      dest: /tmp/{{ extension_pack }}
+    when: 'extpack_list.stdout == "Extension Packs: 0"'
+
+  - name: Install VirtualBox extension pack
+    shell: "VBoxManage extpack install --replace /tmp/{{ extension_pack }}"
+    when: 'extpack_list.stdout == "Extension Packs: 0"'

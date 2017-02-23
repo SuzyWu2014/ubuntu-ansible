@@ -1,0 +1,4 @@
+---
+  apt_virtualbox_version: 5.1
+  virtualbox_version: 5.1.14
+  extension_pack: Oracle_VM_VirtualBox_Extension_Pack-5.1.14-112924.vbox-extpack
