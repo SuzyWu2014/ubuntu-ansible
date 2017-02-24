@@ -1,6 +1,9 @@
 ---
   - name: install compiz
     apt:
-      name: compiz
+      name: "{{ item }}"
       state: present
+    with_items:
+      - compiz
+      - compizconfig-settings-manager
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
