@@ -4,3 +4,21 @@
     name: zsh
     state: present
    when: ansible_distribution == "debian" or ansible_distribution == 'Ubuntu'
+
+ - name: download oh-my-zsh
+   git:
+    repo: git://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+
+ - name: install oh-my-zsh
+   command: bash ~/.oh-my-zsh/tools/install.sh
+
+ - name: install zsh-autosuggestions
+   git:
+    repo: git://github.com/zsh-users/zsh-autosuggestions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+ - name: generate .zshrc
+   copy:
+    src: zshrc
+    dest: ~/.zshrc
