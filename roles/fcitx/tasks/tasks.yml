@@ -3,5 +3,4 @@
    apt:
     name: fcitx
     state: present
-    update_cache: yes
    when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

@@ -2,5 +2,4 @@
   - name: install OpenJDK 8
     apt:
       name: openjdk-8-jdk
-      update_cache: yes
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'

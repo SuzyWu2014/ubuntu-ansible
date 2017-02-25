@@ -15,7 +15,6 @@
     apt:
       name: docker-engine
       state: installed
-      update_cache: true
 
   - name: enable docker service
     service:

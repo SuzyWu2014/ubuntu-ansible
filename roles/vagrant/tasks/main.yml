@@ -3,7 +3,6 @@
     apt:
       name: vagrant
       state: present
-      update_cache: yes
     when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
 
   - name: Add VirtualBox repo key
@@ -15,7 +14,6 @@
     apt_repository:
       repo: 'deb http://download.virtualbox.org/virtualbox/debian xenial contrib'
       state: present
-      update_cache: yes
 
   - name: Install virtualbox in given version
     apt:

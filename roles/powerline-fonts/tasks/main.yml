@@ -6,3 +6,18 @@
 
   - name: install fonts
     command: bash /tmp/fonts/install.sh
+
+  - name: git clone powerline
+    git:
+      repo: https://github.com/milkbikis/powerline-shell
+      dest: /tmp/powerline-shell
+
+  - name: copy config.py to config powerline-shell prompt
+    copy:
+      src: config.py
+      dest: /tmp/powerline-shell/config.py
+
+  - name: apply powerline-shell prompt configuration
+    command: ./install.py
+    args:
+      chdir: /tmp/powerline-shell/
